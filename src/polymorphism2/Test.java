@@ -1,14 +1,25 @@
 package polymorphism2;
 
+import java.util.ArrayList;
+
 public class Test {
 
     public static void main(String[] args) {
-        Animal dog = new Dog();
-        Animal duck = new Duck();
-        Animal cat = new Cat();
+        ArrayList<Animal> animals = new ArrayList<>();
+        Dog dog = new Dog();
+        Duck duck = new Duck();
+        Cat cat = new Cat();
+        animals.add(dog);
+        animals.add(duck);
+        animals.add(cat);
 
-        dog.voice();
-        duck.voice();
-        cat.voice();
+        for(Animal animal : animals){
+            animal.voice();
+        }
+
+        //OR
+        animals.get(0).voice();
+        animals.get(1).voice();
+        animals.get(2).voice();
     }
 }
